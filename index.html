@@ -34,16 +34,26 @@
       <button type="submit" class="btn btn-primary">comentar</button>
     </div>
     <div class="list-group">
-      <div class="list-group-item">
-        <span class="comment__author">Author: <strong>Murilo</strong></span>
-        <p>mensagem de teste</p>
+      <div class="list-group-item" v-for="comment in comments">
+        <span class="comment__author">Author: <strong>{{commet.name}}}</strong></span>
+        <p>{{comment.message}}</p>
         <div>
           <a href="#" tittle="excluir">Excluir</a>
         </div>
       </div>
     </div>
   </div>
-  `
+  `,
+  data(){
+    return{
+      comments: [
+        {
+          name: 'Murilo',
+          message: 'iaennnn'
+        }
+      ]
+    }
+  }
        })
   </script>
 </body>
