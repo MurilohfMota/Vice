@@ -12,28 +12,39 @@
 </head>
 <body>
   <div id="app">
-    
+
+
   </div>
-  <script type="importmap">
-    {
-      "imports": {
-        "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
-      }
-    }
-  </script>
-  
-  <div id="app">{{ message }}</div>
-  
-  <script type="module">
-    import { createApp } from 'vue'
-  
-    createApp({
-      data() {
-        return {
-          message: 'Hello Vue!'
-        }
-      }
-    }).mount('#app')
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+  <script>
+    new Vue({
+      el:"#app",
+      template: `
+      <div id="container">
+    <h1>Comentários</h1>
+    <hr />
+    <div class="form-tudo form-group">
+      <p>
+        <input placeholder="nome" type="text" name="autor" class="form-control">
+      </p>
+      <p>
+        <textarea placeholder="comentário" name="massage" class="form-control" cols="10" rows="2"></textarea>
+      </p>
+      <button type="submit" class="btn btn-primary">comentar</button>
+    </div>
+    <div class="list-group">
+      <div class="list-group-item">
+        <span class="comment__author">Author: <strong>Murilo</strong></span>
+        <p>mensagem de teste</p>
+        <div>
+          <a href="#" tittle="excluir">Excluir</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  `
+       })
   </script>
 </body>
 </html>
