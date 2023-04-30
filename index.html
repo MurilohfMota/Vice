@@ -26,10 +26,10 @@
     <hr />
     <div class="form-tudo form-group">
       <p>
-        <input placeholder="nome" type="text" name="autor" class="form-control">
+        <input placeholder="nome" type="text" name="autor" class="form-control" v-model="name">
       </p>
       <p>
-        <textarea placeholder="comentário" name="massage" class="form-control" cols="10" rows="2"></textarea>
+        <textarea placeholder="comentário" name="massage" class="form-control" cols="10" rows="2" v-model="message"></textarea>
       </p>
       <button v-on:click="addComment"type="submit" class="btn btn-primary">comentar</button>
     </div>
@@ -51,12 +51,25 @@
           name: 'Murilo',
           message: 'iaennnn'
         }
-      ]
+      ],
+      name: '',
+      message:''
     }
   },
   methods:{
     addComment(){
       console.log("chamado!")
+      console.log(this.name)
+      console.log(this.message)
+    if (this.name.trim() === ''|| this.message.trim() === ''){
+      return;
+    }
+      this.comments.push({
+        name: this.name,
+        message: this.message
+      })
+      this.name='';
+      this.message='';
     }
   }
        })
