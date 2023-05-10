@@ -6,7 +6,9 @@
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "test": "\"echo \\\"Erro: no test specified\\\"&& exit 1\""
+    "test": "\"echo \\\"Erro: no test specified\\\"&& exit 1\"",
+    "start": "node index.js",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
