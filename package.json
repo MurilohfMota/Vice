@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "teste node",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^29.5.0"
+  },
   "scripts": {
-    "test": "\"echo \\\"Erro: no test specified\\\"&& exit 1\"",
+    "test": "jest",
     "start": "node index.js",
     "build": "tsc"
   },
